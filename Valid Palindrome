@@ -1,0 +1,8 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        import re
+        alnum = re.sub(r'[\W_]+', '', s)
+        alnum = alnum.lower()
+        reverse_s = ''.join(list(reversed(alnum)))
+        print(reverse_s)
+        return reverse_s == alnum
