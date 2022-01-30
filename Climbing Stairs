@@ -1,0 +1,15 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        memory = [0]*46
+
+        def fib(m):
+            if m <= 1:
+                return 1
+            else:
+                if memory[m] != 0:
+                    return memory[m]
+                else:
+                    memory[m] = fib(m-1) + fib(m-2)
+                    return memory[m]
+
+        return fib(n)
